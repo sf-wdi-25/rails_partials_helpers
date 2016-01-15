@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     # don't let current_user see the log in view
+    @user = User.new
     if current_user
       redirect_to "/users/#{current_user.id}"
     end
